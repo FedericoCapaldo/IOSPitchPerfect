@@ -14,6 +14,7 @@
 		7A41A44E1BCE5CC600D61B66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A41A44C1BCE5CC600D61B66 /* LaunchScreen.xib */; };
 		7A41A45A1BCE5CC600D61B66 /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41A4591BCE5CC600D61B66 /* Pitch_PerfectTests.swift */; };
 		7A5DC1311C5241E800AB075A /* PlaySoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5DC1301C5241E800AB075A /* PlaySoundViewController.swift */; };
+		7A5DC1331C52488100AB075A /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A5DC1321C52488100AB075A /* movie_quote.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		7A41A4581BCE5CC600D61B66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A41A4591BCE5CC600D61B66 /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
 		7A5DC1301C5241E800AB075A /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
+		7A5DC1321C52488100AB075A /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				7A41A4451BCE5CC600D61B66 /* ViewController.swift */,
 				7A5DC1301C5241E800AB075A /* PlaySoundViewController.swift */,
 				7A41A4471BCE5CC600D61B66 /* Main.storyboard */,
+				7A5DC1321C52488100AB075A /* movie_quote.mp3 */,
 				7A41A44A1BCE5CC600D61B66 /* Images.xcassets */,
 				7A41A44C1BCE5CC600D61B66 /* LaunchScreen.xib */,
 				7A41A4411BCE5CC600D61B66 /* Supporting Files */,
@@ -197,6 +200,7 @@
 			files = (
 				7A41A4491BCE5CC600D61B66 /* Main.storyboard in Resources */,
 				7A41A44E1BCE5CC600D61B66 /* LaunchScreen.xib in Resources */,
+				7A5DC1331C52488100AB075A /* movie_quote.mp3 in Resources */,
 				7A41A44B1BCE5CC600D61B66 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
