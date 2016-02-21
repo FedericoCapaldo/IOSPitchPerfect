@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UMH-WB-rWl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UMH-WB-rWl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -29,7 +31,7 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="recordingLabel" text="Recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKp-7S-r4z">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw0-Mw-5Z3">
@@ -109,17 +111,9 @@
                         <viewControllerLayoutGuide type="bottom" id="KDq-kq-XHP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JBW-Yq-KAn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rez-Nq-1UC">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Fast">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="289" y="138" width="30" height="30"/>
-                                </variation>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cf-1Y-Y4Y">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="slowPlay">
@@ -129,30 +123,62 @@
                                     <action selector="playSlowSound:" destination="rvK-C5-C0z" eventType="touchUpInside" id="eY2-0E-Pvk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyb-8W-AQb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="fastPlay">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFastSound:" destination="rvK-C5-C0z" eventType="touchUpInside" id="yW7-aq-QPJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFZ-EX-9es">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop@2x-iphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopPlaySound:" destination="rvK-C5-C0z" eventType="touchUpInside" id="yx4-VC-YVh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8cf-1Y-Y4Y" firstAttribute="top" secondItem="S8T-f7-ymr" secondAttribute="bottom" constant="50" id="8XD-mP-W2I"/>
+                            <constraint firstItem="qyb-8W-AQb" firstAttribute="top" secondItem="S8T-f7-ymr" secondAttribute="bottom" constant="50" id="cvn-k1-5Y2"/>
+                            <constraint firstItem="KDq-kq-XHP" firstAttribute="top" secondItem="dFZ-EX-9es" secondAttribute="bottom" constant="50" id="fIK-Vf-T8k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qyb-8W-AQb" secondAttribute="trailing" constant="30" id="nAz-bd-0z1"/>
                             <constraint firstItem="8cf-1Y-Y4Y" firstAttribute="leading" secondItem="JBW-Yq-KAn" secondAttribute="leadingMargin" constant="30" id="w3R-bO-h7B"/>
+                            <constraint firstAttribute="centerX" secondItem="dFZ-EX-9es" secondAttribute="centerX" id="yqZ-xL-rs9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="rez-Nq-1UC"/>
                                 <exclude reference="8cf-1Y-Y4Y"/>
+                                <exclude reference="qyb-8W-AQb"/>
+                                <exclude reference="dFZ-EX-9es"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="fIK-Vf-T8k"/>
                                 <exclude reference="8XD-mP-W2I"/>
                                 <exclude reference="w3R-bO-h7B"/>
+                                <exclude reference="yqZ-xL-rs9"/>
+                                <exclude reference="cvn-k1-5Y2"/>
+                                <exclude reference="nAz-bd-0z1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="rez-Nq-1UC"/>
                                 <include reference="8cf-1Y-Y4Y"/>
+                                <include reference="qyb-8W-AQb"/>
+                                <include reference="dFZ-EX-9es"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="fIK-Vf-T8k"/>
                                 <include reference="8XD-mP-W2I"/>
                                 <include reference="w3R-bO-h7B"/>
+                                <include reference="yqZ-xL-rs9"/>
+                                <include reference="cvn-k1-5Y2"/>
+                                <include reference="nAz-bd-0z1"/>
                             </mask>
                         </variation>
                     </view>
@@ -181,6 +207,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fastPlay" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowPlay" width="100" height="100"/>
         <image name="stop@2x-iphone" width="50" height="50"/>
