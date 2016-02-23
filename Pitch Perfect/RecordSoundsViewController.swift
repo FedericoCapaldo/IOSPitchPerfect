@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class RecordSoundsViewController: UIViewController {
+class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     //uiLabel called "recordInpogress"
     //IB = linked to the storyboard (Interfaee builder)
@@ -38,7 +38,7 @@ class RecordSoundsViewController: UIViewController {
 
 
     //skeleton button to record
-    //IB = interface builder
+    //IB = Interface Builder
     //IBAction tells me that this is not a normal function
     //..but that is connected to the storyboard or the interface builder
     @IBAction func recordAudio(sender: UIButton) {
@@ -52,10 +52,15 @@ class RecordSoundsViewController: UIViewController {
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentationDirectory,
             .UserDomainMask, true)[0] as String
         
+        /* //CREATE DIFFERENT FILE NAME FOR EACH RECODING
         let currentDate = NSDate()
         let formatter = NSDateFormatter()
         formatter.dateFormat = "ddMMyyyy-HHmmss"
-        let recordingName = formatter.stringFromDate(currentDate)
+        let recordingName = formatter.stringFromDate(currentDate) + ".wav" 
+        */
+        
+        //OVERRIDE SAME FILE AT EACH RECORDING
+        let recordingName = "my_audio.wav"
         
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
@@ -64,9 +69,11 @@ class RecordSoundsViewController: UIViewController {
         //Setup Audio Session
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+
+        //initialise the audioRecorder
         try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
-        
-        //initalise audio recorder
+        //RecordSoundsViewController represent now the delegate of audioRecorder
+        audioRecorder.delegate = self
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
         
@@ -75,6 +82,10 @@ class RecordSoundsViewController: UIViewController {
         print("recording")
     }
     
+    //to be invoked when audio finished recording
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        //notify that it finished
+    }
     
     @IBAction func stopRecord(sender: UIButton) {
         recordInProgress.hidden = true
@@ -84,6 +95,10 @@ class RecordSoundsViewController: UIViewController {
         print("finished recording")
     }
     
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let mySegue = segue!.destinationViewController as secondViewController
+//        mySegue.toPass = "some data"
+    }
+    
 }
 
