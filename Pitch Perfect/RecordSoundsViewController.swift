@@ -86,19 +86,22 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     // invoked when audio finished recording
     //'recorder' parameter represents the audioRecorder object of AVAudioRecorder type and it can be used to retrieve infomation such as where it is stored from it.
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
-        if flag {
+//        if flag {
+
             recordedAudio = RecordedAudio()
             recordedAudio.filePathUrl = recorder.url
             //lastPathComponent represent the name of the file
             recordedAudio.title = recorder.url.lastPathComponent
+
             //initiate next segue. the first parameter is the identifier of the segue on the storyboard
-            performSegueWithIdentifier("stopRecording", sender: recordedAudio)
-        } else {
-            print("an unexpected error occured. your audio could not be saved. sorry!")
-            //set button to initial state before recording
-            recordButton.enabled = true
-            stopButton.hidden = true
-        }
+            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+
+//        } else {
+//            print("an unexpected error occured. your audio could not be saved. sorry!")
+//            //set button to initial state before recording
+//            recordButton.enabled = true
+//            stopButton.hidden = true
+//        }
     }
     
     @IBAction func stopRecord(sender: UIButton) {
