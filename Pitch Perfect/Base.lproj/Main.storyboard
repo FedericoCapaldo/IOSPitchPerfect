@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UMH-WB-rWl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UMH-WB-rWl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -95,7 +95,7 @@
                         <outlet property="recordButton" destination="xWA-7f-xat" id="Acl-2A-qIH"/>
                         <outlet property="recordInProgress" destination="JKp-7S-r4z" id="DjI-aw-AJ5"/>
                         <outlet property="stopButton" destination="bw0-Mw-5Z3" id="mA7-ar-WRn"/>
-                        <segue destination="rvK-C5-C0z" kind="show" identifier="stopRecording" id="PL5-jB-Goe"/>
+                        <segue destination="rvK-C5-C0z" kind="show" identifier="stopRecording" id="mtn-Le-End"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -113,6 +113,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "stopRecording") { //this is the name on the segue (arrow) between 2 models
+            let playsoundVC:PlaySoundViewController = segue.destinationViewController as! PlaySoundViewController
+            let dataToSend = sender as! RecordedAudio // check performSegueWithIdentifier and see who is the sender.
+            playsoundVC.receivedAudio = dataToSend
+        }
+        
 //        let mySegue = segue!.destinationViewController as secondViewController
 //        mySegue.toPass = "some data"
     }
