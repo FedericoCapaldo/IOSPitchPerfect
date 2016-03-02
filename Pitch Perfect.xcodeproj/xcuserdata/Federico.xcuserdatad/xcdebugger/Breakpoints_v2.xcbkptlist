@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "playSlowSound(_:)"
+            landmarkName = "playFastSound(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
