@@ -50,8 +50,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
         //get home directory path of the file and create unique file in there. 
         //make sure you handle cached data (currently no way to delete saved records)
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentationDirectory,
-            .UserDomainMask, true)[0] as String
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
         /* //CREATE DIFFERENT FILE NAME FOR EACH RECODING
         let currentDate = NSDate()
