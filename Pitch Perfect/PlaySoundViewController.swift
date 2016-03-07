@@ -41,6 +41,9 @@ class PlaySoundViewController: UIViewController {
         playSound(2.0)
     }
     
+    @IBAction func playChipmunkSound(sender: AnyObject) {
+        // TODO: change pitch of the sound
+    }
     
     @IBAction func stopPlaySound(sender: AnyObject) {
         audioPlayer.stop()

@@ -141,10 +141,19 @@
                                     <action selector="stopPlaySound:" destination="rvK-C5-C0z" eventType="touchUpInside" id="yx4-VC-YVh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64O-et-cmJ">
+                                <rect key="frame" x="50" y="304" width="100" height="100"/>
+                                <state key="normal" image="chipmunk"/>
+                                <connections>
+                                    <action selector="playChipmunkSound:" destination="rvK-C5-C0z" eventType="touchUpInside" id="FdF-9Z-LvB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8cf-1Y-Y4Y" firstAttribute="top" secondItem="S8T-f7-ymr" secondAttribute="bottom" constant="50" id="8XD-mP-W2I"/>
+                            <constraint firstItem="64O-et-cmJ" firstAttribute="leading" secondItem="JBW-Yq-KAn" secondAttribute="leadingMargin" constant="30" id="TiH-hr-f4N"/>
+                            <constraint firstItem="KDq-kq-XHP" firstAttribute="top" secondItem="64O-et-cmJ" secondAttribute="bottom" constant="196" id="aVf-NH-SLO"/>
                             <constraint firstItem="qyb-8W-AQb" firstAttribute="top" secondItem="S8T-f7-ymr" secondAttribute="bottom" constant="50" id="cvn-k1-5Y2"/>
                             <constraint firstItem="KDq-kq-XHP" firstAttribute="top" secondItem="dFZ-EX-9es" secondAttribute="bottom" constant="50" id="fIK-Vf-T8k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qyb-8W-AQb" secondAttribute="trailing" constant="30" id="nAz-bd-0z1"/>
@@ -158,12 +167,12 @@
                                 <exclude reference="dFZ-EX-9es"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fIK-Vf-T8k"/>
                                 <exclude reference="8XD-mP-W2I"/>
                                 <exclude reference="w3R-bO-h7B"/>
                                 <exclude reference="yqZ-xL-rs9"/>
                                 <exclude reference="cvn-k1-5Y2"/>
                                 <exclude reference="nAz-bd-0z1"/>
+                                <exclude reference="fIK-Vf-T8k"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -173,12 +182,12 @@
                                 <include reference="dFZ-EX-9es"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fIK-Vf-T8k"/>
                                 <include reference="8XD-mP-W2I"/>
                                 <include reference="w3R-bO-h7B"/>
                                 <include reference="yqZ-xL-rs9"/>
                                 <include reference="cvn-k1-5Y2"/>
                                 <include reference="nAz-bd-0z1"/>
+                                <include reference="fIK-Vf-T8k"/>
                             </mask>
                         </variation>
                     </view>
@@ -207,6 +216,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk" width="100" height="100"/>
         <image name="fastPlay" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowPlay" width="100" height="100"/>
